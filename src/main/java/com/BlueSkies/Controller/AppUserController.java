@@ -11,11 +11,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 import com.BlueSkies.Entity.AppUser;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
 
-@RestController("/User")
+
+
+
+
+@RestController
+@RequestMapping("/user")
 public class AppUserController {
     @Autowired
     private AppUserService appUserService;
@@ -28,6 +36,11 @@ public class AppUserController {
     @GetMapping("/allUsers")
     public List<AppUser> getAllUsers() {
         return appUserService.allUsers();
+    }
+    
+    @PostMapping("/add")
+    public AppUser postMethodName(@RequestBody AppUser user) {
+        return appUserService.save(user);
     }
     
     

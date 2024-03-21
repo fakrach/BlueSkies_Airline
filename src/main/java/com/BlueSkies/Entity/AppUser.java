@@ -29,6 +29,6 @@ public class AppUser {
     private String lastName;
     private String email;
     private String phoneNumber;
-    @OneToMany(mappedBy = "Booking", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<Booking> bookings;
 }
