@@ -26,5 +26,5 @@ public class Flight {
     private String departureTime;
     private String arrivalTime;
     private int availableSeats;
-    
+    private int totalSeates;
 }

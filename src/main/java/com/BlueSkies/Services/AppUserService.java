@@ -29,6 +29,16 @@ public class AppUserService {
         return appUserRepository.save(user);
     }
 
+    public AppUser update(AppUser user){
+        AppUser current = appUserRepository.findById(user.getId()).orElseThrow();
+        current.setEmail(user.getEmail());
+        current.setFirstName(user.getFirstName());
+        current.setLastName(user.getLastName());
+        current.setPhoneNumber(user.getPhoneNumber());
+
+        return appUserRepository.save(current);
+    }
+
     public void deleteById(long id){
         appUserRepository.deleteById(id);
     }

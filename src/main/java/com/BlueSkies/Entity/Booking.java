@@ -1,5 +1,7 @@
 package com.BlueSkies.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +29,7 @@ public class Booking {
     private long totalPrice;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("bookings")
     private AppUser user;
     @OneToOne
     @JoinColumn(name ="flight_id", referencedColumnName = "id")

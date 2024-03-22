@@ -31,6 +31,16 @@ public class BookingService {
         return bookingRepository.save(user);
     }
 
+    public Booking update(Booking booking){
+        Booking current = bookingRepository.findById(booking.getId()).orElseThrow();
+        current.setId(booking.getId());
+        current.setNumberOfTicket(booking.getNumberOfTicket());
+        current.setTotalPrice(booking.getTotalPrice());
+        current.setFlight(booking.getFlight());
+        current.setUser(booking.getUser());
+        return bookingRepository.save(current);
+    }
+
     public void deleteById(long id){
         bookingRepository.deleteById(id);
     }
