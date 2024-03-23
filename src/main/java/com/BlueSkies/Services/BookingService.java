@@ -16,7 +16,7 @@ public class BookingService {
     @Autowired
     private BookingRepository bookingRepository;
 
-        public long AppUserCount(){
+        public long Count(){
         return bookingRepository.count();
     }
 

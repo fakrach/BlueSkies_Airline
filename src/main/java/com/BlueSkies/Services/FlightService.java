@@ -13,7 +13,7 @@ public class FlightService {
     @Autowired
     private FlightRepository flightRepository;
 
-    public long AppUserCount(){
+    public long Count(){
         return flightRepository.count();
     }
 

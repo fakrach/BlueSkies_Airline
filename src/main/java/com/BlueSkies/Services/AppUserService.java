@@ -14,7 +14,7 @@ public class AppUserService {
     @Autowired
     private AppUserRepository appUserRepository;
 
-    public long AppUserCount(){
+    public long Count(){
         return appUserRepository.count();
     }
 
